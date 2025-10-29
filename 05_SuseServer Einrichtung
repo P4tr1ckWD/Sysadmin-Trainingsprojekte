@@ -1,0 +1,16 @@
+# Ersteinrichtung Suse Sever
+
+## Ziel des Projekts
+Einrichten und Absichern
+
+## Systemumgebung
+- Suse Leap 16
+- HyperV
+- Dienste: firewalld, fail2ban
+
+## Schritte
+1. Installation von ISO
+2. UFW ging nicht wegen anderer NACL Einstellungen, stattdessen firewalld verwendet und konfiguriert, nur Ports 22, 80,443 sind offen
+3. fail2ban installiert
+
+
