@@ -1,0 +1,48 @@
+# mariadb auf Suse
+
+## Ziel des Projekts
+Installation der mariadb
+
+## Systemumgebung
+- Suse Leap 16
+- HyperV
+- root, patrick
+- Dienste: mariadb
+
+## Schritte
+1. Installation der mariadb
+2. Login nicht möglich wegen fehlendem Passwort
+3. Start im abgesicheten Modus und vergabe Passwort für root
+4. regulärer Start mit neuem Passwort
+5. CREATE DATABASE
+6. User Patrick in mariadb anlegen und Rechte für DB zuweisen.
+
+
+# Beispielbefehle hier
+
+Installiere den MariaDB-Server:
+    sudo zypper install mariadb-server
+
+Starte MariaDB und aktiviere den Autostart:
+    sudo systemctl enable --now mariadb
+
+Führe das Sicherheits-Skript aus, um MariaDB abzusichern:
+    sudo mysql_secure_installation
+
+Melde dich an, um die Installation zu testen:
+    mysql -u root -p
+
+Start im abgesicherten Modus
+    sudo systemctl stop mariadb
+    sudo systemctl set-environment MYSQLD_OPTS="--skip-grant-tables --skip-networking"
+    sudo systemctl start mariadb
+    sudo mariadb -u root -p
+    CREATE USER 'NAME'@'localhost' IDENTIFIED BY 'PASWWORD';    
+    sudo systemctl stop mariadb
+    sudo systemctl unset-environment MYSQLD_OPTS
+    sudo systemctl start mariadb
+    sudo mariadb -u root -p
+    CREATE DATABASE 'meine_Datenbank';
+    SHOW DATABASES;
+    GRANT ALL PRIVILEGES ON meine_Datenbank.* TO 'patrick'@'localhost';
+    FLUSH PRIVILEGES;
