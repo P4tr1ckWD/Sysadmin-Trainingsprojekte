@@ -1,0 +1,27 @@
+# Ubuntu Server
+
+## Ziel des Projekts
+Server einrichten
+
+## Systemumgebung
+- Ubuntu 24 LTS
+- HyperV
+- Dienste: UFW, fail2ban, SSH
+
+## Schritte
+1. von Iso installieren
+2. UFW Firewall installieren und nur Ports 22,80,443 geöffnet lassen
+3. fail2ban installieren und Config ansehen
+4. Ping zu UbuntuDesktop um Netzwerk zu testen
+5. SSH Zugang von Ubuntu Desktop aus einrichten
+
+## Befehle
+###SSH
+Auf Server
+sudo apt install openssh-server -y
+sudo systemctl enable --now ssh
+sudo systemctl status ssh
+
+Auf Linux Client 
+ssh Name@IP
+mit yes bestätigen
