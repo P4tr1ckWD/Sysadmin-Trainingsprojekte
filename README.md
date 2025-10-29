@@ -32,20 +32,9 @@ Ich lerne aktuell Systemadministration und möchte nicht nur theoretisches Wisse
 
 ---
 
-## 📂 Repository Struktur
-
-Sysadmin-Trainingsprojekte/
-├── linux/
-├── netzwerk/
-├── sicherheit/
-├── windows/
-├── cloud/
-└── vorlagen/
-
-
----
 
 ## 📫 Kontakt
 
 Bei Interesse oder Rückfragen zu meinen Projekten:  
 E-Mail: patrick_wode@hotmail.com
+
