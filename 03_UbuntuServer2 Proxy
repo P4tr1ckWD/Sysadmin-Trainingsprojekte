@@ -1,0 +1,51 @@
+# Installation eines Squid Proxy
+
+## Ziel des Projekts
+Der Internetverkehr von Ubuntu Desktop soll über diesen Server mit Squid Proxy laufen.
+
+## Systemumgebung
+- Ubuntu 24 LTS
+- HyperV
+- Dienste: UFW, fail2ban, Squid
+
+## Schritte
+1. Installation von ISO
+2. Absicherung mit UFW und fail2ban
+3. Installation von Squid
+
+
+## Beispielbefehle hier
+#Server:
+sudo apt update
+sudo apt install squid -y
+
+sudo nano /etc/squid/squid.conf
+muss vorhanden sein: http_port 3128
+ändern: http_access allow none >> http_access allow all
+speichern und schliessen
+
+sudo systemctl restart squid
+sudo systemctl status squid
+sudo ufw allow 3128
+
+#Client:
+Im Browser oder Betriebssystem die IP-Adresse des Servers und den Port 3128 als Proxy eintragen. 
+
+#Feste IP festlegen, damit nach neustart nicht die IP angepasst werden muss
+Die Konfiguration liegt in /etc/netplan/01-netcfg.yaml
+Datei in Nano öffnen
+
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    ens33: # <-- ERSETZE DAS mit deinem Interface-Namen
+      dhcp4: no
+      addresses:
+        - 192.168.1.100/24  # <-- Deine gewünschte feste IP / Subnetzmaske
+      gateway4: 192.168.1.1    # <-- Die IP-Adresse deines Routers
+      nameservers:
+        addresses: [8.8.8.8, 1.1.1.1] # <-- DNS-Server (z.B. Google, Cloudflare)
+
+speichern und schliessen
+sudo netplan apply
