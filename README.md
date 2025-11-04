@@ -4,7 +4,7 @@ Ich lerne aktuell Systemadministration und möchte nicht nur theoretisches Wisse
 
 ---
 
-## 🎯 Lernschwerpunkte
+## Lernschwerpunkte
 
 - Linux Server Administration (Ubuntu, Debian)
 - Benutzer- und Rechteverwaltung
@@ -15,14 +15,19 @@ Ich lerne aktuell Systemadministration und möchte nicht nur theoretisches Wisse
 - Windows Server Grundlagen / Active Directory
 - AWS Cloud Basics & IAM
 
+---
 
+## Zertifikate
+
+- Microsoft zertifiziert: Azure-Grundlagen
 
 ---
 
 
-## 📫 Kontakt
+## Kontakt
 
 Bei Interesse oder Rückfragen zu meinen Projekten:  
 E-Mail: patrick_wode@hotmail.com
+
 
 
