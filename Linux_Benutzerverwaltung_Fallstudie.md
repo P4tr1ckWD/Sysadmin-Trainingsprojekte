@@ -1,6 +1,6 @@
-# 🐧 Fallstudie: Benutzerverwaltung & Sicherheit unter Linux
+# Fallstudie: Benutzerverwaltung & Sicherheit unter Linux
 
-## 📌 Ziel dieser Übung
+## Ziel dieser Übung
 
 In dieser Fallstudie wird ein Linux-Server von unsauberer Benutzerverwaltung (alle arbeiten mit `admin`) auf eine sichere Struktur mit einzelnen Benutzern, Gruppen, SSH-Schlüsseln und Berechtigungen umgestellt.
 
@@ -16,7 +16,7 @@ Sicherheitsmaßnahmen wie Passwortablauf und Fail2ban sollen aktiviert werden
 
 ---
 
-## 👥 Benutzer & Gruppen
+## Benutzer & Gruppen
 
 Benutzer (mit Home-Verzeichnis und Standard-Shell):
 adduser sarah
@@ -38,7 +38,7 @@ usermod -aG marketing lisa
 usermod -aG marketing paul
 usermod -aG it max
 
-## 📂 Verzeichnisstruktur & Berechtigungen
+## Verzeichnisstruktur & Berechtigungen
 
 Ordner erstellen:
 mkdir -p /projekte/entwicklung
@@ -55,7 +55,7 @@ chmod 2770 /projekte/entwicklung
 chmod 2770 /projekte/marketing
 chmod 2775 /projekte/gemeinsam
 
-## 🔐 SSH absichern (Key statt Passwort)
+## SSH absichern (Key statt Passwort)
 
 Auf dem Client (z. B. Ubuntu Desktop):
 ssh-keygen -t ed25519
@@ -69,7 +69,7 @@ PasswordAuthentication no
 Dienst neu starten:
 sudo systemctl restart ssh
 
-## 🛡️ Sicherheit: Passwortablauf & Fail2ban
+## Sicherheit: Passwortablauf & Fail2ban
 
 Passwörter alle 90 Tage wechseln:
 chage -M 90 sarah
@@ -91,7 +91,7 @@ maxretry = 5
 bantime = 600
 findtime = 600
 
-## ✅ Kontrolle & Fehleranalyse
+## Kontrolle & Fehleranalyse
 
 Gruppen eines Nutzers anzeigen	
 groups NAME
@@ -104,3 +104,4 @@ sudo tail -f /var/log/auth.log
 
 Rechte eines Ordners prüfen	
 ls -l /projekte
+
