@@ -1,6 +1,6 @@
 # Sysadmin-Trainingsprojekte
 
-Ich lerne aktuell Systemadministration und möchte nicht nur theoretisches Wissen sammeln, sondern es in echten Szenarien anwenden. In diesem Repository dokumentiere ich meine Trainingsprojekte – Schritt für Schritt, lösungsorientiert und praxisnah. Von Linux über Netzwerk bis Security: alles, was ein moderner Administrator braucht.
+Ich lerne aktuell Systemadministration und möchte nicht nur theoretisches Wissen sammeln, sondern es in echten Szenarien anwenden. In diesem Repository dokumentiere ich meine Trainingsprojekte – von Linux über Netzwerk bis Security: alles, was ein Admin braucht.
 
 ---
 
@@ -15,20 +15,7 @@ Ich lerne aktuell Systemadministration und möchte nicht nur theoretisches Wisse
 - Windows Server Grundlagen / Active Directory
 - AWS Cloud Basics & IAM
 
----
 
-## 🚀 Roadmap (aktueller Lernstatus)
-
-| Status | Thema |
-|--------|--------|
-| ✅ | Linux Grundlagen |
-| ✅ | SSH Zugriff & Key Authentication |
-| ✅ | UFW Firewall Setup |
-| 🟡 | Fail2ban Konfiguration |
-| 🟡 | Proxy Server (Squid) |
-| ⬜ | Active Directory |
-| ⬜ | AWS IAM & S3 |
-| ⬜ | Backup & Monitoring |
 
 ---
 
@@ -37,4 +24,5 @@ Ich lerne aktuell Systemadministration und möchte nicht nur theoretisches Wisse
 
 Bei Interesse oder Rückfragen zu meinen Projekten:  
 E-Mail: patrick_wode@hotmail.com
+
 
