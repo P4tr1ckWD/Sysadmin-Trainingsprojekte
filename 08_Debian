@@ -1,0 +1,39 @@
+# Debian
+
+## Ziel des Projekts
+Ersteinrichtung
+
+## Systemumgebung
+- OS / Version: Debian
+- Netzwerk: HyperV
+- Benutzer / Rollen: root, patrick
+- Dienste:
+
+## Schritte
+1. Nutzer ist nicht sudo, wechsel zum root User und erteilen von sudo Mitgliedschaft
+2. UFW Firewall und fail2ban installieren und konfigurieren
+3. Sicherheit mit Kali testen, nmap und hydra, check in log files
+
+
+# Beispielbefehle hier
+
+Nutzer wechselt zu root: su
+Sudo installieren: apt install sudo
+Zufügen: sudo usermod -aG sudo patrick
+Nutzer wechseln: su patrick
+
+sudo apt install ufw
+sudo ufw enable
+sudo ufw default deny incomig
+sudo ufw default allow outgoing
+sudo ufw allow 22
+sudo ufw allow 80
+sudo ufw allow 443
+
+sudo apt install fail2ban
+sudo systemctl start fail2ban
+Konfiguration: /etc/fail2ban/jail.conf
+
+nmap IP
+nmap IP -p 22,80,443 -sV 
+hydra -l root -P /usr/share/wordlists/rockyou.txt -s 22 -t 4 IP ssh
