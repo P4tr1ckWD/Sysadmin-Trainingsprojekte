@@ -1,0 +1,15 @@
+# Suse mit Docker und Mariadb
+
+## Ziel des Projekts
+Docker und Mariadb installieren
+
+## Systemumgebung
+- OS / Version: openSUSE Leap 15
+- Netzwerk: Hetzner
+- Benutzer / Rollen:
+- Dienste:
+
+## Schritte
+1. Ersteinrichtung
+2. Docker installieren
+3. mariadb installieren und Beispieldatenbank laden 
