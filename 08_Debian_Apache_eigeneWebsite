@@ -1,18 +1,21 @@
 # Debian
 
 ## Ziel des Projekts
-Ersteinrichtung
+Ersteinrichtung und Apache Webserver
 
 ## Systemumgebung
 - OS / Version: Debian
 - Netzwerk: HyperV
 - Benutzer / Rollen: root, patrick
-- Dienste:
+- Dienste: Apache
 
 ## Schritte
 1. Nutzer ist nicht sudo, wechsel zum root User und erteilen von sudo Mitgliedschaft
 2. UFW Firewall und fail2ban installieren und konfigurieren
 3. Sicherheit mit Kali testen, nmap und hydra, check in log files
+4. Apache installieren, konfigurieren, UFW anpassen, mit kleiner Website testen
+5. SSH Zugang vom PC aus einrichten
+6. Komplette Website hochladen und testen
 
 
 # Beispielbefehle hier
@@ -30,10 +33,28 @@ sudo ufw allow 22
 sudo ufw allow 80
 sudo ufw allow 443
 
-sudo apt install fail2ban
+sudo apt install fail2ban:
 sudo systemctl start fail2ban
 Konfiguration: /etc/fail2ban/jail.conf
 
-nmap IP
+nmap IP:
 nmap IP -p 22,80,443 -sV 
 hydra -l root -P /usr/share/wordlists/rockyou.txt -s 22 -t 4 IP ssh
+
+Apache:
+sudo apt update
+sudo apt install apache2 -y
+sudo systemctl enable apache2 --now
+
+Mini-Website:
+sudo nano /var/www/html/index.html
+
+UFW Freigabe:
+sudo ufw allow 'Apache'
+
+Von anderer VM aus im Browser aufrufen:
+http://SERVER-IP
+
+Nach Upload von eigener Website mit Winscp müssen die Rechte angepasst werden:
+sudo chown -R www-data:www-data /var/www/html/
+sudo chmod -R 755 /var/www/html/
