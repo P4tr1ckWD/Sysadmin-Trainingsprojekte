@@ -6,12 +6,13 @@ Ich lerne aktuell Systemadministration und möchte nicht nur theoretisches Wisse
 
 ## Lernschwerpunkte
 
-- Linux Server Administration (Ubuntu, Debian)
+- Linux Server Administration (Ubuntu, SUSE, Debian)
 - Benutzer- und Rechteverwaltung
 - SSH-Konfiguration & Sicherheit
 - Firewall (UFW) & Fail2ban
 - Netzwerkgrundlagen (TCP/IP, Routing, DNS)
 - Proxy-Server & Sicherheit (Squid)
+- Webserver (Apache)
 - Windows Server Grundlagen / Active Directory
 - AWS Cloud Basics & IAM
 
@@ -28,6 +29,7 @@ Ich lerne aktuell Systemadministration und möchte nicht nur theoretisches Wisse
 
 Bei Interesse oder Rückfragen zu meinen Projekten:  
 E-Mail: patrick_wode@hotmail.com
+
 
 
 
