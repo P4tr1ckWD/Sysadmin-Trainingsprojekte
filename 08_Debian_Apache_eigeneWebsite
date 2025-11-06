@@ -7,7 +7,7 @@ Ersteinrichtung und Apache Webserver
 - OS / Version: Debian
 - Netzwerk: HyperV
 - Benutzer / Rollen: root, patrick
-- Dienste: Apache
+- Dienste: Apache Webserver, SSH
 
 ## Schritte
 1. Nutzer ist nicht sudo, wechsel zum root User und erteilen von sudo Mitgliedschaft
