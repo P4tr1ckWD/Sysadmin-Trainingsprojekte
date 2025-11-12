@@ -1,0 +1,26 @@
+# Fedora Workstation Istallation
+
+## Ziel des Projekts
+System kennenlernen
+
+## Systemumgebung
+- OS / Version: Fedora 43
+- Netzwerk: HyperV
+- Benutzer / Rollen: patrick
+- Dienste: firewalld
+
+## Schritte
+1. neuen Usewr einrichten
+2. Firewalld konfigurieren
+3.
+
+
+# Beispielbefehle hier
+sudo adduser patrick
+sudo passwd patrick
+usermod -aG wheel patrick
+su patrick
+
+sudo systemctl start firewalld
+sudo systemctl enable firewalld
+firewall-cmd --list-all
