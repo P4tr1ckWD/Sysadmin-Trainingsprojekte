@@ -1,0 +1,66 @@
+Da der HyperV beim Neustart die IP des Gateways verändert hat, 
+habe ich einen neuen Switch mit fester IP eingebaut, hier die Anleitung von ChatGPT:
+
+🔌 Schritt 1: Hyper-V Manager öffnen
+
+Starte den Hyper-V Manager:
+
+Öffne das Startmenü
+
+Tippe: Hyper-V Manager
+
+Öffne die Anwendung
+
+🧱 Schritt 2: Virtuellen Switch erstellen
+
+Wähle links deinen PC/Host aus.
+
+Klicke rechts auf "Virtueller Switch-Manager…".
+
+🌐 Schritt 3: Neuen Switch anlegen
+
+Wähle links "Extern".
+
+Klicke auf "Virtuellen Switch erstellen".
+
+👤 Du siehst jetzt ein Konfigurationsfenster.
+
+⚙ Schritt 4: Einstellungen vornehmen
+
+Name: z. B. Externes_LAN
+
+Verbindungstyp: Externes Netzwerk
+
+Physikalischen Netzwerkadapter wählen:
+Wähle hier den LAN- oder WLAN-Adapter, über den dein PC ins Internet geht.
+
+👉 Achtung:
+Wenn du WLAN nutzt, kann Hyper-V manchmal Schwierigkeiten haben. Am besten mit LAN (Kabel) oder einem Adapter, der Virtualisierung unterstützt.
+
+Häkchen bei:
+
+"Gemeinsame Nutzung des Netzwerkadapters zulassen"
+
+Klicke auf OK.
+
+🔄 Schritt 5: Netzwerkkonfiguration der VM anpassen
+
+Öffne die Einstellungen deiner VM.
+
+Gehe zu Netzwerkadapter.
+
+Wähle statt des "Default Switch" nun den neu erstellten externen Switch (z. B. Externes_LAN).
+
+🧠 Schritt 6: VM neu starten & Netzwerk testen
+
+In der Ubuntu/debian-basierten VM:
+
+ip a
+ping 8.8.8.8
+ip route
+sudo apt update
+
+
+Deine VM sollte jetzt eine IP-Adresse aus deinem Heimnetz (z. B. 192.168.x.x) bekommen.
+
+Gateway ist dein Router → bleibt immer gleich.
