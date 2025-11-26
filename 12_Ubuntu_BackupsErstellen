@@ -1,0 +1,35 @@
+# Backups erstellen
+
+## Ziel des Projekts
+Wie kann man einen Ordner (z.B. Home) backuppen
+
+## Systemumgebung
+- OS / Version: Ubuntu
+- Netzwerk: HyperV
+- Benutzer / Rollen:
+- Dienste: tar, scp
+
+## Schritte
+1. Backup des Home und des etc-Ordners als tar Datei erstellen
+2. SSH Zugang zu anderem Rechner einrichten
+3. Kopieren der Daten
+4. Alternative: Host als Brücke: Von Server 1 mit WinSCP auf PC runterladen, dann mit WinSCP auf zweiten Server hochladen
+
+
+# Beispielbefehle hier
+###Ordner verpacken
+sudo tar -cvpzf /home/patrick/NAMEDERHOMEBACKUPDATEI.tar.gz /home/patrick
+sudo tar -cvpzf /home/patrick/NAMEDERETCBACKUPDATEI.tar.gz /etc
+
+###SSH
+Auf Server
+sudo apt install openssh-server -y
+sudo systemctl enable --now ssh
+sudo systemctl status ssh
+
+Auf Linux Client 
+ssh Name@IP
+mit yes bestätigen
+
+###Kopieren mit SSH Zugang
+scp /home/patrick/NAMEDERHOMEBACKUPDATEI.tar.gz patrick@172.18.57.34:/home/patrick
