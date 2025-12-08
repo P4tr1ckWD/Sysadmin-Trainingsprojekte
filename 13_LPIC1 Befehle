@@ -1,0 +1,22 @@
+# Funktionen aus LPIC 1 101 und 102.1 testen und verstehen
+
+## Ziel des Projekts
+Neue Funktionen Kennenlernen
+
+## Systemumgebung
+- OS / Version: Debian
+- Netzwerk: HyperV
+- Benutzer / Rollen:
+- Dienste:
+
+## Schritte
+1. sudo gdisk /dev/sda
+2. sudo parted /dev/sda
+3. lsblk
+4. modprobe -r scsi-mod
+5. sudo systemctl rescue + journalctl -xb | grep "fail"
+6. sudo shutdown -r +10 + wall "Der Server wird in 10 Minuten neu gestartet!"
+7. cat /lib/udev/rules.d/70-mouse-rules
+
+
+
