@@ -1,9 +1,5 @@
-ChatGPT:
-
-Hier ist Aufgabe + Musterlösung im Markdown-Format, komplett sauber strukturiert und sofort bereit für dein GitHub-Repository oder deine Lernunterlagen:
-
-📘 Fallstudie: „Neuer interner Webserver – aber niemand kann zugreifen“
-📝 Aufgabe
+# Fallstudie: „Neuer interner Webserver – aber niemand kann zugreifen“
+## Aufgabe
 
 Ein Unternehmen richtet einen neuen internen Webserver ein. Die IT hat auf einem Ubuntu-Server Apache installiert. Der Webserver ist unter der IP 10.0.20.50 erreichbar. Auf dem Server selbst funktioniert:
 
@@ -65,7 +61,8 @@ Welche Maßnahmen würdest du durchführen?
 Der Admin Jonas hat alles „nebenbei“ eingerichtet und nichts dokumentiert.
 Was sollte verbessert werden, damit zukünftige Installationen sauber und konsistent laufen?
 
-✅ Musterlösung
+
+##Lösung
 1️⃣ Netzwerk- & Apache-Diagnose
 
 Der Webserver funktioniert lokal, aber nicht aus anderen Netzbereichen. Das bedeutet:
@@ -185,4 +182,5 @@ Checkliste für neue Server
 
 Testverfahren vor Übergabe
 
-Dadurch werden Fehler schneller erkannt und Installationen bleiben konsisten
+
+Dadurch werden Fehler schneller erkannt und Installationen bleiben konsistent
