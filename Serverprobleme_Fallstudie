@@ -1,0 +1,150 @@
+Fallstudie: „Der neue Web-Server funktioniert nicht“
+
+Ein mittelständisches Unternehmen betreibt eine kleine IT-Infrastruktur mit gemischten Systemen. Ein neuer Linux-Webserver (Ubuntu Server) wurde eingerichtet, um eine interne Wissensplattform bereitzustellen. Nach der Einrichtung gibt es jedoch mehrere Probleme.
+
+🔹 Aufgabe 1 – Linux / Dienste
+
+Der Administrator Jonas hat Apache installiert und aktiviert:
+
+sudo apt install apache2
+sudo systemctl enable --now apache2
+
+
+Doch beim Versuch, http://10.0.20.50 aufzurufen, bekommt niemand die Seite zu sehen.
+Jonas stellt fest:
+
+systemctl status apache2 zeigt „active (running)“
+
+Ein curl localhost auf dem Server funktioniert
+
+Ein anderer Server kann curl 10.0.20.50 jedoch nicht erreichen (Timeout)
+
+Was könnte hier falsch konfiguriert sein? Welche Schritte würdest du testen?
+
+🔹 Aufgabe 2 – Firewall / Netzwerk
+
+Ein anderer Admin sagt, dass die Firewall eigentlich deaktiviert ist.
+Jonas überprüft:
+
+sudo ufw status
+
+
+Ausgabe:
+Status: active
+80/tcp ALLOW 10.0.10.0/24
+
+Das Unternehmensnetz besteht aber aus:
+
+Büro-Netz: 10.0.10.0/24
+
+Server-Netz: 10.0.20.0/24
+
+Management-Netz: 10.0.99.0/24
+
+Warum funktioniert der Zugriff aus dem 10.0.20.0/24-Netz nicht?
+Welche Anpassung musst du vornehmen?
+
+🔹 Aufgabe 3 – Windows / DNS
+
+Die Firmen-PCs (Windows 11) greifen per Hostnamen zu:
+
+http://wiki.intern
+
+Doch der Browser sagt:
+„DNS_PROBE_FINISHED_NXDOMAIN“
+
+Jonas prüft den DNS-Server (Windows Server):
+
+In der Forward-Lookup-Zone intern.local gibt es keinen Eintrag „wiki“
+
+Im Büro-Netz wurde 10.0.20.50 als Webserver kommuniziert
+
+Was muss Jonas im DNS tun, damit die Clients den Server über den Hostnamen erreichen?
+
+🔹 Aufgabe 4 – Sicherheit / HTTPS
+
+Der Webserver soll bald öffentlich erreichbar werden.
+Eine Sicherheitsprüfung ergibt:
+
+Kein HTTPS aktiv
+
+Keine HSTS-Header
+
+Default-Apache-Seite aktiv
+
+Zugriff auf /server-status ist öffentlich möglich
+
+Welche sicherheitsrelevanten Maßnahmen sollte Jonas treffen, bevor der Server extern erreichbar wird?
+
+🔹 Aufgabe 5 – Dokumentation / Prozesse
+
+Beim Durchgehen der Serverdokumentation fällt auf:
+
+Es gibt keine Dokumentation über die Netzwerksubnetze
+
+Firewallregeln sind nicht beschrieben
+
+DNS-Zonen sind nicht dokumentiert
+
+Es gibt keinen Prozess für neue Serverinstallationen
+
+Was sollte Jonas hier organisatorisch verbessern, damit zukünftige Installationen reibungsloser laufen?
+
+
+Empfohlene Maßnahmen
+
+Let's Encrypt Zertifikat einrichten
+
+sudo apt install certbot python3-certbot-apache
+sudo certbot --apache
+
+
+HTTP → HTTPS Redirect aktivieren
+
+server-status sperren
+In /etc/apache2/conf-available/status.conf:
+
+<Location /server-status>
+    Require local
+</Location>
+
+
+Default Seite deaktivieren
+
+sudo a2dissite 000-default.conf
+
+
+Eigene Seite aktivieren
+
+sudo a2ensite wiki.conf
+
+
+Härtung
+
+HSTS
+
+TLS 1.2/1.3 only
+
+Keine Directory Listings
+
+Firewall auf das Nötigste beschränken
+
+5. Prozess- und Dokumentationsverbesserung
+
+Jonas sollte:
+
+eine Server-Checkliste für neue Installationen einführen
+
+alle Subnetze, VLANs und Routingwege dokumentieren
+
+UFW-/iptables-Regeln dokumentieren
+
+DNS-Zonen und Hostnamen pflegen und versionieren
+
+Proxy-, Web- und Sicherheitseinstellungen dokumentieren
+
+ein Wiki für IT-Dokumentation nutzen
+
+das Onboarding und Standardprozesse definieren
+
+Damit werden zukünftige Fehler deutlich reduziert.
