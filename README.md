@@ -21,6 +21,7 @@ Ich lerne aktuell Systemadministration und möchte nicht nur theoretisches Wisse
 ## Zertifikate
 
 - Microsoft zertifiziert: Azure-Grundlagen
+- AWS Certified Cloud Practitioner
 
 ---
 
@@ -29,6 +30,7 @@ Ich lerne aktuell Systemadministration und möchte nicht nur theoretisches Wisse
 
 Bei Interesse oder Rückfragen zu meinen Projekten:  
 E-Mail: patrick_wode@hotmail.com
+
 
 
 
