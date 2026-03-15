@@ -97,91 +97,77 @@ Finde heraus, **welche Benutzer aktuell am System angemeldet sind**.
 
 ## Aufgabe 1 -- Benutzer anlegen
 
-``` cmd
-net user m.mueller Start123! /add
-net user k.schmidt Start123! /add
-net user t.weber Start123! /add
-```
+net user m.mueller srhjz8 /add
+net user k.schmidt der64g /add
+net user t.weber 98kzt5 /add
+
 
 Passwortänderung beim ersten Login erzwingen:
-
-``` cmd
 net user m.mueller /logonpasswordchg:yes
 net user k.schmidt /logonpasswordchg:yes
 net user t.weber /logonpasswordchg:yes
-```
+
 
 ------------------------------------------------------------------------
 
 ## Aufgabe 2 -- Gruppen erstellen und Benutzer zuordnen
 
-``` cmd
 net localgroup Buchhaltung /add
 net localgroup Vertrieb /add
 net localgroup IT /add
-```
 
-``` cmd
+
 net localgroup Buchhaltung m.mueller /add
 net localgroup Vertrieb k.schmidt /add
 net localgroup IT t.weber /add
-```
+
 
 ------------------------------------------------------------------------
 
 ## Aufgabe 3 -- Administratorrechte vergeben
 
-``` cmd
 net localgroup Administrators t.weber /add
-```
+
 
 ------------------------------------------------------------------------
 
 ## Aufgabe 4 -- Anmeldezeiten einschränken
 
-``` cmd
 net user k.schmidt /times:M-F,08:00-18:00
-```
+
 
 ------------------------------------------------------------------------
 
 ## Aufgabe 5 -- Benutzer prüfen
 
-``` cmd
 net user
-```
 
-``` cmd
+
 net localgroup IT
-```
 
-``` cmd
+
 net user m.mueller
-```
+
 
 ------------------------------------------------------------------------
 
 ## Aufgabe 6 -- Konto deaktivieren
 
-``` cmd
 net user m.mueller /active:no
-```
 
 ------------------------------------------------------------------------
 
 ## Aufgabe 7 -- Benutzer löschen
 
-``` cmd
 net user k.schmidt /delete
-```
+
 
 ------------------------------------------------------------------------
 
 ## Zusatzfrage -- angemeldete Benutzer
 
-``` cmd
 query user
-```
+
 
 Alternative:
 
