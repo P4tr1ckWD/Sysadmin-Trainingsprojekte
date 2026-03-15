@@ -98,13 +98,18 @@ Finde heraus, **welche Benutzer aktuell am System angemeldet sind**.
 ## Aufgabe 1 -- Benutzer anlegen
 
 net user m.mueller srhjz8 /add
+
 net user k.schmidt der64g /add
+
 net user t.weber 98kzt5 /add
 
 
 Passwortänderung beim ersten Login erzwingen:
+
 net user m.mueller /logonpasswordchg:yes
+
 net user k.schmidt /logonpasswordchg:yes
+
 net user t.weber /logonpasswordchg:yes
 
 
@@ -113,12 +118,16 @@ net user t.weber /logonpasswordchg:yes
 ## Aufgabe 2 -- Gruppen erstellen und Benutzer zuordnen
 
 net localgroup Buchhaltung /add
+
 net localgroup Vertrieb /add
+
 net localgroup IT /add
 
 
 net localgroup Buchhaltung m.mueller /add
+
 net localgroup Vertrieb k.schmidt /add
+
 net localgroup IT t.weber /add
 
 
@@ -169,8 +178,3 @@ net user k.schmidt /delete
 query user
 
 
-Alternative:
-
-``` cmd
-quser
-```
